@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}}Accueil{% endblock %}
+
+{% block body %}
+<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold"> FORUM</h1>
+{% for message in messages %}
+{% if message['parent'] is null %}
+<p>{{message['@id']}} {{message['titre']}} {{message['datePoste']}}</p>
+{% endif %}
+{% endfor %}
+
+{% endblock %}
